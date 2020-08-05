@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "npm run build && next export && touch > out/.nojekyll",
+    "serve": "npm run export && serve out",
+    "deploy": "npm run export && node gh-pages.js"
   },
   "dependencies": {
     "bootstrap": "^4.5.0",
